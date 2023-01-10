@@ -1,0 +1,11 @@
+public final class io/matthewnelson/component/value/clazz/NoValue {
+	public fun <init> ()V
+}
+
+public abstract class io/matthewnelson/component/value/clazz/ValueClazz {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun equals (Ljava/lang/Object;)Z
+	public final fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
