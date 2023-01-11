@@ -20,18 +20,27 @@
 ![badge-support-js-ir]
 
 A small library that provides a functionally equivalent alternative to Kotlin's 
-`value class` through inheritance.
+`value class` via inheritance.
 
-Kotlin's `value class` is powerful and I use them pervasively. One issue 
-though is that the `value class` does not compile to other languages 
-(e.g. Java or Js). Instead, the underlying type of the `value class` is what 
-consumers from those languages see. If you wish to retain the type and expose/accept 
-it in your public API(s), this becomes problematic for non-Kotlin consumers of your code.
+Kotlin's `value class` is powerful and I use them pervasively, but there are some caveats 
+to using them.
+ - Kotlin `value class` does not compile to other languages (e.g. Java or Js). Instead, 
+   the underlying type of the `value class` is what consumers from those languages see. If 
+   you wish to retain the type and expose/accept it in your public API(s), this becomes 
+   problematic for non-Kotlin consumers of your code.
+ - If your Kotlin `value class` inherits from an `interface` or `sealed interface`, it
+   loses the boxing/unboxing properties that make them so amazing! They become equivalant
+   to a regular `class`, with the downside of them not compiling to platform specific
+   code (as mentioned above).
+     - If you're using Kotlin `value class`es that implement `interface`es, especially if they
+       are a part of your public API(s), this library is for you!
 
-As a library creator and lover of Kotlin, I've learned that using Kotlin's 
-`value class` in your public API(s) (such as `kotlin.Result`) comes with challenges. 
-Ensuring that consumers of your code have a similar experience, whether they are using 
-Kotlin or not, is what was behind creating this. Enjoy!
+As a library creator, I've learned that using Kotlin's `value class` in your public API(s) 
+(such as `kotlin.Result`) comes with challenges; I've begun limiting their usage to `internal`
+only.
+
+Ensuring that consumers of your code have a plesant experience, whether they are using Kotlin 
+or not, was the motivation for creating this. **Enjoy!**
 
 A full list of `kotlin-components` projects can be found [HERE][url-kotlin-components]
 
