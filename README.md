@@ -79,9 +79,9 @@ fun main() {
 }
 
 sealed class Objects: ValueClazz(NoValue()) {
-    object Loading: Objects
-    object Success: Objects
-    object Failure: Objects
+    object Loading: Objects()
+    object Success: Objects()
+    object Failure: Objects()
 }
 ```
 
