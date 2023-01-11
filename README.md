@@ -136,6 +136,8 @@ constructor(value: String): IpAddress(value) {
 ```kotlin
 // build.gradle.kts
 dependencies {
+    // if ValueClazz will be a part of your public API (library devs),
+    // use api instead of implementation.
     implementation("io.matthewnelson.kotlin-components:value-clazz:0.1.0")
 }
 ```
@@ -145,6 +147,8 @@ dependencies {
 ```groovy
 // build.gradle
 dependencies {
+    // if ValueClazz will be a part of your public API (library devs),
+    // use api instead of implementation.
     implementation "io.matthewnelson.kotlin-components:value-clazz:0.1.0"
 }
 ```
